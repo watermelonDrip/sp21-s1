@@ -109,7 +109,60 @@ public class Model extends Observable {
     public boolean tilt(Side side) {
         boolean changed;
         changed = false;
+        int m = 1;
+        boolean fd = false;
         // TODO: Modify this.board (and perhaps this.score) to account
+        for (int c = 0; c < board.size(); c += 1) {
+            for (int r = board.size()-1; r >= 0; r -= 1){
+                m = 1;
+                Tile t = board.tile(c, r);
+
+                boolean ff = false;
+                if (r == board.size()-1) {continue;}
+                else {
+                    if (board.tile(c, r) == null) {continue;}
+
+                    if (board.tile(c, r) != null) {
+
+
+                        while (r+m < board.size() &&  fd == false){
+
+
+                            if (board.tile(c, r+m) == null) {m +=1;continue;}
+
+                            if (board.tile(c,r).value() ==board.tile(c,r+m).value())
+                            {
+                            board.move(c,r+m,t);
+                            score += board.tile(c, r+m).value();
+                            changed = true;
+                            m+=1;
+                            fd = true;
+
+                            }
+
+                            m += 1;
+                        }
+                        if (fd == true && r+m >= board.size()) {continue;}
+                        m = 1;
+
+                        while (board.tile(c,r+m) == null)
+                        {
+                            //Tile x = board.tile(c, r+m);
+                            //board.move(c, r+m, t);
+                            //changed = true;
+                            m+=1;
+                            if (r+m >= board.size()) {break;}
+
+                        }
+                        board.move(c, r+m-1, t);
+                        changed = true;
+
+
+                    }
+                   // System.out.println(score);
+                }
+            }
+        }
         // for the tilt to the Side SIDE. If the board changed, set the
         // changed local variable to true.
         //for (int c = 0; c < board.size(); c += 1) {
