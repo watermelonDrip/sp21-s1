@@ -110,54 +110,49 @@ public class Model extends Observable {
         boolean changed;
         changed = false;
         int m = 1;
+        int n = 1;
         boolean fd = false;
+        int[][] p = new int[board.size()][board.size()];
+
+     //   if (side ==  1 ) {
+     //       int a = 1;
+     //       System.out.println(side.name);
+     //   }
+
+        board.setViewingPerspective(side);
         // TODO: Modify this.board (and perhaps this.score) to account
         for (int c = 0; c < board.size(); c += 1) {
             for (int r = board.size()-1; r >= 0; r -= 1){
-                m = 1;
+                n = 1;
                 Tile t = board.tile(c, r);
-
-                boolean ff = false;
+                fd = false;
                 if (r == board.size()-1) {continue;}
                 else {
                     if (board.tile(c, r) == null) {continue;}
-
                     if (board.tile(c, r) != null) {
-
-
-                        while (r+m < board.size() &&  fd == false){
-
-
-                            if (board.tile(c, r+m) == null) {m +=1;continue;}
-
-                            if (board.tile(c,r).value() ==board.tile(c,r+m).value())
+                        while (r+n < board.size() &&  fd == false){
+                            if (p[c][r+n] != 0) {n+=1;continue;}
+                            if (board.tile(c, r+n) == null) {n +=1;continue;}
+                            if (board.tile(c,r).value() ==board.tile(c,r+n).value())
                             {
-                            board.move(c,r+m,t);
-                            score += board.tile(c, r+m).value();
+                            board.move(c,r+n,t);
+                            p[c][r+n] = board.tile(c, r+n).value();
+                            score += board.tile(c, r+n).value();
                             changed = true;
-                            m+=1;
+                            n+=1;
                             fd = true;
-
                             }
-
-                            m += 1;
+                            n += 1;
                         }
-                        if (fd == true && r+m >= board.size()) {continue;}
+                        if (fd == true && r+n >= board.size()) {continue;}
                         m = 1;
-
                         while (board.tile(c,r+m) == null)
                         {
-                            //Tile x = board.tile(c, r+m);
-                            //board.move(c, r+m, t);
-                            //changed = true;
                             m+=1;
                             if (r+m >= board.size()) {break;}
-
                         }
                         board.move(c, r+m-1, t);
                         changed = true;
-
-
                     }
                    // System.out.println(score);
                 }
@@ -182,6 +177,7 @@ public class Model extends Observable {
         if (changed) {
             setChanged();
         }
+        board.setViewingPerspective(Side.NORTH);
         return changed;
     }
 
