@@ -4,6 +4,10 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class SquarePrimesTest {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 160747451c147c59d8e3cbf70a7afee2b73bebdb
     /**
      * Here is a test for isPrime method. Try running it.
      * It passes, but the starter code implementation of isPrime
@@ -16,6 +20,7 @@ public class SquarePrimesTest {
         assertEquals("14 -> 15 -> 16 -> 289 -> 18", lst.toString());
         assertTrue(changed);
     }
+<<<<<<< HEAD
 
     @Test
     public void testSquarePrimesSimple2() {
@@ -42,4 +47,6 @@ public class SquarePrimesTest {
     }
 
 
+=======
+>>>>>>> 160747451c147c59d8e3cbf70a7afee2b73bebdb
 }

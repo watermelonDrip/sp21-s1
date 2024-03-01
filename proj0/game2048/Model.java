@@ -109,6 +109,7 @@ public class Model extends Observable {
     public boolean tilt(Side side) {
         boolean changed;
         changed = false;
+<<<<<<< HEAD
         int m = 1;
         int n = 1;
         boolean fd = false;
@@ -172,12 +173,21 @@ public class Model extends Observable {
         //}
 
 
+=======
+
+        // TODO: Modify this.board (and perhaps this.score) to account
+        // for the tilt to the Side SIDE. If the board changed, set the
+        // changed local variable to true.
+>>>>>>> 160747451c147c59d8e3cbf70a7afee2b73bebdb
 
         checkGameOver();
         if (changed) {
             setChanged();
         }
+<<<<<<< HEAD
         board.setViewingPerspective(Side.NORTH);
+=======
+>>>>>>> 160747451c147c59d8e3cbf70a7afee2b73bebdb
         return changed;
     }
 
@@ -198,6 +208,7 @@ public class Model extends Observable {
      * */
     public static boolean emptySpaceExists(Board b) {
         // TODO: Fill in this function.
+<<<<<<< HEAD
         // System.out.println(b.tile(0,0));
         int r = 0;
         int c = 0;
@@ -211,6 +222,8 @@ public class Model extends Observable {
             c = 0;
             r = r + 1;
         }
+=======
+>>>>>>> 160747451c147c59d8e3cbf70a7afee2b73bebdb
         return false;
     }
 
@@ -221,6 +234,7 @@ public class Model extends Observable {
      */
     public static boolean maxTileExists(Board b) {
         // TODO: Fill in this function.
+<<<<<<< HEAD
         // TODO: Fill in this function.
         // System.out.println(b.tile(0,0));
         int r = 0;
@@ -238,6 +252,8 @@ public class Model extends Observable {
             c = 0;
             r = r + 1;
         }
+=======
+>>>>>>> 160747451c147c59d8e3cbf70a7afee2b73bebdb
         return false;
     }
 
@@ -249,6 +265,7 @@ public class Model extends Observable {
      */
     public static boolean atLeastOneMoveExists(Board b) {
         // TODO: Fill in this function.
+<<<<<<< HEAD
         if (emptySpaceExists(b)) {return true;}
         int r = 0;
         int c = 0;
@@ -274,6 +291,8 @@ public class Model extends Observable {
             c = 0;
             r = r + 1;
         }
+=======
+>>>>>>> 160747451c147c59d8e3cbf70a7afee2b73bebdb
         return false;
     }
 
