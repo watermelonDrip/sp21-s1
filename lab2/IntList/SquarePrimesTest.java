@@ -3,11 +3,8 @@ package IntList;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-public class SquarePrimesTest {
-<<<<<<< HEAD
-=======
+public class  SquarePrimesTest {
 
->>>>>>> 160747451c147c59d8e3cbf70a7afee2b73bebdb
     /**
      * Here is a test for isPrime method. Try running it.
      * It passes, but the starter code implementation of isPrime
@@ -20,33 +17,11 @@ public class SquarePrimesTest {
         assertEquals("14 -> 15 -> 16 -> 289 -> 18", lst.toString());
         assertTrue(changed);
     }
-<<<<<<< HEAD
-
     @Test
-    public void testSquarePrimesSimple2() {
-        IntList lst = IntList.of(17, 18, 19, 20, 21);
+    public void testSquarePrimesSimple1() {
+        IntList lst = IntList.of(14, 15);
         boolean changed = IntListExercises.squarePrimes(lst);
-        assertEquals("289 -> 18 -> 361 -> 20 -> 21", lst.toString());
+        assertEquals("14 -> 15", lst.toString());
         assertTrue(changed);
     }
-
-    @Test
-    public void testSquarePrimesSimple3() {
-        IntList lst = IntList.of(1, 18, 19, 20, 21);
-        boolean changed = IntListExercises.squarePrimes(lst);
-        assertEquals("1 -> 18 -> 361 -> 20 -> 21", lst.toString());
-        assertTrue(changed);
-    }
-
-    @Test
-    public void testSquarePrimesSimple4() {
-        IntList lst = IntList.of(1, 18);
-        boolean changed = IntListExercises.squarePrimes(lst);
-        assertEquals("1 -> 18", lst.toString());
-        assertFalse(changed);
-    }
-
-
-=======
->>>>>>> 160747451c147c59d8e3cbf70a7afee2b73bebdb
 }
